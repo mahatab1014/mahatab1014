@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>MahTab — It's Me!</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="MahTab — It's Me!">
+
+
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4205/4205099.png" type="image/x-icon">
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background: #000 !important;
+    }
+    .main-screen{
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-header h4{
+      color: #03e9f4;
+      
+      
+    }
+    .contact-icon{
+      display: flex;
+      flex-direction: row;
+      width: 60% !important;
+      margin: auto;
+    }
+    img{
+      max-width: 100% !important;
+    }
+    .contact-info img {
+      width: 70%;
+      border-radius: 50%;
+      transition: 300ms;
+      background: #03e9f4;
+      box-shadow: 0 0 5px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 200px #03e9f4,
+              0 0 120px #03e9f4;
+
+    }
+    .contact-info img:hover {
+      transition: 300ms;
+      transform: scale(1.1);
+      background: #03e9f4;
+      box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 150px #03e9f4,
+              0 0 100px #03e9f4;
+    }
+
+    .contact-header h4 {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+    .contact-header h4 span {
+      position: absolute;
+      display: block;
+    }
+      
+    .contact-header h4 span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: btn-anim1 1s linear infinite;
+    }
+      
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+      50%,100% {
+        left: 100%;
+      }
+    }
+      
+    .contact-header h4 span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+      
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+      50%,100% {
+        top: 100%;
+      }
+    }
+      
+    .contact-header h4 span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+      
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+      50%,100% {
+        right: 100%;
+      }
+    }
+      
+    .contact-header h4 span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .70s
+    }
+      
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,100% {
+        bottom: 100%;
+      }
+    }
+
+
+    @media screen and (max-width: 768px){ 
+      .contact-icon{
+      flex-wrap: wrap;
+      width: 100% !important;
+      }
+      .contact-icon span{
+        width: calc(33.33% - 20px);
+        margin: 10px;
+      }
+
+    }
+
+  </style>
+
+  <!-- Bootstrap CSS v5.1.3 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+
+  <script src="https://kit.fontawesome.com/fbcff7765f.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+  <main class="container">
+    <!-- Banner Section -->
+    <section class="main-screen text-center py-5">
+
+      <!-- <h1 class="display-5 mb-3">Please wait a few hours</h1> -->
+
+      <div class="hello-world">
+        <h1 class="display-5 mb-3 text-white">Hello World!</h1>
+        <h4 class="h4 mb-5 fw-normal text-white-50">This Website is Under Construction</h4>
+      </div>
+
+
+      <div class="contact-info mb-3">
+
+        <div class="contact-header mb-2">
+          <h4 class="px-3 py-2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            I am available to discuss with you.
+          </h4>
+        </div>
+
+        <div class="contact-icon">
+          <span class="">
+            <a href="https://facebook.com/mahatab1014">
+              
+              <img src="assets/images/icons/facebook.png" alt="" srcset="">
+
+            </a>
+          </span>
+          <span class="">
+            <a href="https://fiverr.com/mahatab1014">
+              
+              <img src="assets/images/icons/fiverr.png" alt="" srcset="">
+
+            </a>
+          </span>
+          <span class="">
+            <a href="https://wa.link/jjxkfs">
+              
+              <img src="assets/images/icons/whatsapp.png" alt="" srcset="">
+
+            </a>
+          </span>
+          <span class="">
+            <a href="mailto:mahatab1014@gmail.com">
+              
+              <img src="assets/images/icons/email.png" alt="" srcset="">
+
+            </a>
+          </span>
+          <span class="">
+            <a href="https://twitter.com/mahatab1014">
+              
+              <img src="assets/images/icons/twitter.png" alt="" srcset="">
+
+            </a>
+          </span>
+          <span class="">
+            <a href="https://instagram.com/mahatab1014">
+              
+              <img src="assets/images/icons/instagram.png" alt="" srcset="">
+
+            </a>
+          </span>
+        </div>
+
+
+      </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    
+  </main>
+
+
+
+
+  <!-- Bootstrap JS v5.1.3 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+
+
+</body>
+
+</html>
