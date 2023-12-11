@@ -9,24 +9,26 @@
 - 🌱 I’m currently learning —  **Next.js, Three.js**
 - 🔭 I’m exploring —  Advance motion graphics for web.
 - 👨‍💻 All of my projects are available at [https://github.com/mahatab1014](https://github.com/mahatab1014?tab=repositories)
-
+- 💬 Ask me about —  **HTML, CSS, Bootstrap, Tailwind CSS, React.js**
 <!-- - 📝 I regularly write articles on [https://mahatab1014.hashnode.dev/](https://mahatab1014.hashnode.dev/) -->
 
-- 💬 Ask me about —  **HTML, CSS, Bootstrap, Tailwind CSS, React.js**
+
 
 
 
 ## Current Stats
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+<div align="center">
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=mahatab1014&theme=transparent&hide_border=true)](https://github.com/mahatab1014)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=mahatab1014&theme=nightowl&hide_border=true)](https://github.com/mahatab1014)
 
-[![mahatab1014's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mahatab1014&theme=transparent&show_icons=true&hide_border=true&layout=compact)](https://github.com/mahatab1014)
+[![mahatab1014's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mahatab1014&theme=nightowl&show_icons=true&hide_border=true&layout=compact)](https://github.com/mahatab1014)
 
 </div>
 
 ## Technologies that I know
+
+<div align="center">
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -42,13 +44,18 @@
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) 
 ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white)
-<!-- <div style="display: flex; justify-content: center;">
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,express,nodejs,mongodb,firebase,tailwind,bootstrap,photoshop,figma,canva&perline=5)](https://skillicons.dev)
-</div> -->
+</div>
+
 
 ## 🌐 Reach Me Out
+
+<div align="center">
+
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/mahatab1014) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/mahatab1014) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/mahatab1014) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/mahatab1014) 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=mahatab1014&label=Visitors&color=0088cc&style=flat" alt="mahatab1014" /> </p>
+</div>
+
+
 
 ## ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
