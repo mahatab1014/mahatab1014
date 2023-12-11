@@ -1,274 +1,1048 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" data-theme="synthwave" class="">
+  <head>
+    <title>MahTab — It's Me!</title>
 
-  <title>MahTab — It's Me!</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="description" content="MahTab — It's Me!" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fafafa">
-  <meta name="description" content="MahTab — It's Me!">
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/4205/4205099.png"
+      type="image/x-icon"
+    />
 
+    <!-- DaisyUi & TailwindCSS -->
 
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4205/4205099.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-    }
-    body{
-      background: #000 !important;
-    }
-    .main-screen{
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-header h4{
-      color: #03e9f4;
-      
-      
-    }
-    .contact-icon{
-      display: flex;
-      flex-direction: row;
-      width: 60% !important;
-      margin: auto;
-    }
-    img{
-      max-width: 100% !important;
-    }
-    .contact-info img {
-      width: 70%;
-      border-radius: 50%;
-      transition: 300ms;
-      background: #03e9f4;
-      box-shadow: 0 0 5px #03e9f4,
-              0 0 20px #03e9f4,
-              0 0 200px #03e9f4,
-              0 0 120px #03e9f4;
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/style.css" />
 
-    }
-    .contact-info img:hover {
-      transition: 300ms;
-      transform: scale(1.1);
-      background: #03e9f4;
-      box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 150px #03e9f4,
-              0 0 100px #03e9f4;
-    }
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    .contact-header h4 {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-    }
-    .contact-header h4 span {
-      position: absolute;
-      display: block;
-    }
-      
-    .contact-header h4 span:nth-child(1) {
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #03e9f4);
-      animation: btn-anim1 1s linear infinite;
-    }
-      
-    @keyframes btn-anim1 {
-      0% {
-        left: -100%;
-      }
-      50%,100% {
-        left: 100%;
-      }
-    }
-      
-    .contact-header h4 span:nth-child(2) {
-      top: -100%;
-      right: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(180deg, transparent, #03e9f4);
-      animation: btn-anim2 1s linear infinite;
-      animation-delay: .25s
-    }
-      
-    @keyframes btn-anim2 {
-      0% {
-        top: -100%;
-      }
-      50%,100% {
-        top: 100%;
-      }
-    }
-      
-    .contact-header h4 span:nth-child(3) {
-      bottom: 0;
-      right: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(270deg, transparent, #03e9f4);
-      animation: btn-anim3 1s linear infinite;
-      animation-delay: .5s
-    }
-      
-    @keyframes btn-anim3 {
-      0% {
-        right: -100%;
-      }
-      50%,100% {
-        right: 100%;
-      }
-    }
-      
-    .contact-header h4 span:nth-child(4) {
-      bottom: -100%;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(360deg, transparent, #03e9f4);
-      animation: btn-anim4 1s linear infinite;
-      animation-delay: .70s
-    }
-      
-    @keyframes btn-anim4 {
-      0% {
-        bottom: -100%;
-      }
-      50%,100% {
-        bottom: 100%;
-      }
-    }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("a").on("click", function (event) {
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            const hash = this.hash;
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              200,
+              function () {
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // You get the current window width
+        var width = window.innerWidth;
 
+        //Than you define the AOS settings for different widths
+        if (width <= 600) {
+          // For example, this can be for mobile devices
+          AOS.init({
+            offset: 100,
+            duration: 900,
+          });
+        } else if (width > 600 && width <= 900) {
+          // And you make a condition for tablets too
+          AOS.init({
+            offset: 300,
+            duration: 1200,
+          });
+        } else {
+          // Else for just, you know, desktops
+          AOS.init();
+        }
+      });
+    </script>
+  </head>
 
-    @media screen and (max-width: 768px){ 
-      .contact-icon{
-      flex-wrap: wrap;
-      width: 100% !important;
-      }
-      .contact-icon span{
-        width: calc(33.33% - 20px);
-        margin: 10px;
-      }
+  <body onload="myFunction()">
+    <header class="shadow-md backdrop-blur sticky top-0 z-50">
+      <nav class="navbar container mx-auto">
+        <div class="navbar-start">
+          <a class="text-xl cursor-pointer font-bold" href="#home">MahaTab</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 font-semibold">
+            <li><a href="#banner">Home</a></li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+            <li><a href="#about-me">About Me</a></li>
+          </ul>
+          <label class="swap swap-rotate [&>svg]:w-6 [&>svg]:h-6">
+            <input type="checkbox" class="theme-controller" value="light" />
 
-    }
+            <!-- sun icon -->
+            <svg
+              class="swap-on fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+              />
+            </svg>
 
-  </style>
+            <!-- moon icon -->
+            <svg
+              class="swap-off fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+              />
+            </svg>
+          </label>
+        </div>
+        <div class="navbar-end lg:hidden">
+          <label class="swap swap-rotate [&>svg]:w-6 [&>svg]:h-6">
+            <input type="checkbox" class="theme-controller" value="light" />
 
-  <!-- Bootstrap CSS v5.1.3 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  
+            <!-- sun icon -->
+            <svg
+              class="swap-on fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+              />
+            </svg>
 
-  <script src="https://kit.fontawesome.com/fbcff7765f.js" crossorigin="anonymous"></script>
+            <!-- moon icon -->
+            <svg
+              class="swap-off fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+              />
+            </svg>
+          </label>
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="absolute right-0 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a href="#banner">Home</a></li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact-us">Contact Us</a></li>
+              <li><a href="#about-me">About Me</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-
-
-</head>
-
-<body>
-
-
-
-
-  <main class="container">
-    <!-- Banner Section -->
-    <section class="main-screen text-center py-5">
-
-      <!-- <h1 class="display-5 mb-3">Please wait a few hours</h1> -->
-
-      <div class="hello-world">
-        <h1 class="display-5 mb-3 text-white">Hello World!</h1>
-        <h4 class="h4 mb-5 fw-normal text-white-50">This Website is Under Construction</h4>
+    <main class="overflow-hidden">
+      <div>
+        <div id="loader"></div>
       </div>
 
-
-      <div class="contact-info mb-3">
-
-        <div class="contact-header mb-2">
-          <h4 class="px-3 py-2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            I am available to discuss with you.
-          </h4>
+      <!-- Banner Section -->
+      <section id="banner" class="loading-section">
+        <div class="container mx-auto px-5 relative">
+          <div class="gradient mx-auto"></div>
+          <div
+            class="flex items-center flex-col-reverse md:flex-row py-10 md:py-20"
+          >
+            <div class="space-y-5" data-aos="fade-up-right">
+              <h2 class="text-3xl md:text-4xl">
+                Mahatab <br />
+                Hossen Sudip
+              </h2>
+              <p>
+                I'm a front-end web developer creating seamless interfaces.
+                Committed to crafting user-friendly designs and empowering
+                fellow developers on the journey. Let's build together! 🚀
+              </p>
+              <a class="btn btn-outline btn-sm" href="/resume.txt" download>
+                Download CV
+              </a>
+            </div>
+            <figure data-aos="fade-up-left">
+              <img
+                class="w-3/5 sm:w-2/4 md:w-full xl:w-2/3 mx-auto"
+                src="/assets/images/hero.png"
+                alt=""
+              />
+            </figure>
+          </div>
         </div>
+      </section>
 
-        <div class="contact-icon">
-          <span class="">
-            <a href="https://facebook.com/mahatab1014">
-              
-              <img src="assets/images/icons/facebook.png" alt="" srcset="">
+      <section
+        id="skills"
+        class="bg-base-300 py-10 loading-section"
+        data-aos="fade-up"
+      >
+        <div class="container mx-auto py-10 px-5">
+          <div class="title pb-8">
+            <h2
+              class="text-2xl font-semibold text-center capitalize lg:text-3xl"
+            >
+              My Skills
+            </h2>
+            <div
+              class="divider before:bg-black before:h-1 before:rounded-l after:rounded-r after:bg-black after:h-1 w-16 mx-auto mt-0"
+            ></div>
+          </div>
 
-            </a>
-          </span>
-          <span class="">
-            <a href="https://fiverr.com/mahatab1014">
-              
-              <img src="assets/images/icons/fiverr.png" alt="" srcset="">
+          <div class="flex justify-evenly flex-wrap gap-5">
+            <div class="rounded shadow-xl px-5 glass" data-aos="fade-up">
+              <ul
+                class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+              >
+                <li>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-start md:text-end mb-8">
+                    <time class="font-mono italic">2021</time>
+                    <div class="text-lg font-black">HTML</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end mb-8">
+                    <time class="font-mono italic">2021</time>
+                    <div class="text-lg font-black">CSS</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-start md:text-end mb-8">
+                    <time class="font-mono italic">2021</time>
+                    <div class="text-lg font-black">Bootstrap</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end mb-8">
+                    <time class="font-mono italic">2021</time>
+                    <div class="text-lg font-black">WordPress</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="rounded shadow-xl px-5 glass" data-aos="fade-up">
+              <ul
+                class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+              >
+                <li>
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-start md:text-end mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">TailwindCSS</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">React.js</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-start mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">Next.js</div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">
+                      Express <span class="font-medium">(Familiar)</span>
+                    </div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-start mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">
+                      Node.js <span class="font-medium">(Familiar)</span>
+                    </div>
+                  </div>
+                  <hr />
+                </li>
+                <li>
+                  <hr />
+                  <div class="timeline-middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div class="timeline-end mb-8">
+                    <time class="font-mono italic">2023</time>
+                    <div class="text-lg font-black">
+                      MongoDB <span class="font-medium">(Familiar)</span>
+                    </div>
+                  </div>
+                  <hr />
+                </li>
+              </ul>
+            </div>
 
-            </a>
-          </span>
-          <span class="">
-            <a href="https://wa.link/jjxkfs">
-              
-              <img src="assets/images/icons/whatsapp.png" alt="" srcset="">
-
-            </a>
-          </span>
-          <span class="">
-            <a href="mailto:mahatab1014@gmail.com">
-              
-              <img src="assets/images/icons/email.png" alt="" srcset="">
-
-            </a>
-          </span>
-          <span class="">
-            <a href="https://twitter.com/mahatab1014">
-              
-              <img src="assets/images/icons/twitter.png" alt="" srcset="">
-
-            </a>
-          </span>
-          <span class="">
-            <a href="https://instagram.com/mahatab1014">
-              
-              <img src="assets/images/icons/instagram.png" alt="" srcset="">
-
-            </a>
-          </span>
+            <div
+              class="rounded shadow-xl p-5 glass col-span-2"
+              data-aos="fade-in"
+            >
+              <p class="leading-6">
+                I've accumulated two years of hands-on experience working with
+                <strong>WordPress</strong> on
+                <a
+                  class="underline font-bold"
+                  href="http://fiverr.com/developermonuar"
+                  >Fiverr</a
+                >. During this time, I've successfully delivered a variety of
+                projects, specializing in crafting dynamic and user-friendly
+                WordPress websites. My work involves understanding client needs,
+                customizing themes, implementing plugins, and ensuring seamless
+                functionality. I take pride in creating websites that not only
+                meet but exceed client expectations, fostering positive client
+                relationships and earning consistently positive feedback on the
+                Fiverr platform. My experience has honed my skills in WordPress
+                development and strengthened my commitment to delivering
+                high-quality solutions.
+              </p>
+            </div>
+            <div
+              class="rounded shadow-xl p-5 glass col-span-2"
+              data-aos="fade-in"
+            >
+              <p class="leading-6">
+                Having transitioned from WordPress, I've dedicated the last 6
+                months to front-end development, delving into HTML, CSS, and
+                JavaScript. I specialize in creating dynamic user interfaces
+                using React.js and Next.js, combining efficiency with a seamless
+                user experience. Additionally, I'm familiar with MongoDB,
+                Express.js, and Node.js, rounding out my skills for full-stack
+                proficiency. My journey involves staying current with industry
+                trends, implementing responsive designs, and collaborating
+                effectively in development teams. This experience has deepened
+                my technical proficiency and fueled my passion for crafting
+                engaging and intuitive user experiences. Excited to continue
+                growing as a front-end developer and contribute to innovative
+                projects.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
 
+      <section id="portfolio" class="py-16 loading-section" data-aos="fade-up">
+        <div class="container px-6 py-10 mx-auto">
+          <div class="title">
+            <h2
+              class="text-2xl font-semibold text-center capitalize lg:text-3xl"
+            >
+              My <span class="text-blue-500">Portfolio</span>
+            </h2>
 
-      </div>
+            <div
+              class="divider before:bg-black before:h-1 before:rounded-l after:rounded-r after:bg-black after:h-1 w-16 mx-auto mt-0"
+            ></div>
+          </div>
 
+          <div
+            class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3"
+          >
+            <a href="https://survey-wallet-1014.web.app/" target="_blank">
+              <div
+                class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+                "
+              >
+                <div
+                  class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
+                >
+                  <h2 class="mt-4 text-xl font-semibold capitalize">
+                    Polling and Survey application!
+                  </h2>
+                  <p
+                    class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                  >
+                    Website
+                  </p>
+                </div>
+              </div>
+            </a>
 
+            <a
+              href="https://work-wizards-1014.web.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
+                style="
+                  background-image: url('https://res.cloudinary.com/hilnmyskv/image/upload/q_70,f_auto/v1683729897/Algolia_com_Blog_assets/Featured_images/ecommerce/what-is-an-online-marketplace/lnywag1uuexthf29as0l.jpg');
+                "
+              >
+                <div
+                  class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
+                >
+                  <h2 class="mt-4 text-xl font-semibold capitalize">
+                    innovative online marketplace
+                  </h2>
+                  <p
+                    class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                  >
+                    Website
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://techhaven-1014.web.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1426024084828-5da21e13f5dc?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                "
+              >
+                <div
+                  class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
+                >
+                  <h2 class="mt-4 text-xl font-semibold capitalize">
+                    Biggest phones and laptops shop
+                  </h2>
+                  <p
+                    class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                  >
+                    Website
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
+      <section id="about-me" class="py-16 loading-section" data-aos="fade-up">
+        <div class="container mx-auto px-5">
+          <div class="title">
+            <h2
+              class="text-2xl font-semibold text-center capitalize lg:text-3xl"
+            >
+              About <span class="text-blue-500">ME</span>
+            </h2>
 
-    </section>
+            <div
+              class="divider before:bg-black before:h-1 before:rounded-l after:rounded-r after:bg-black after:h-1 w-16 mx-auto mt-0"
+            ></div>
+          </div>
 
+          <div class="flex flex-col-reverse md:flex-row items-center gap-5">
+            <div class="w-5/6 space-y-4" data-aos="fade-up">
+              <p>
+                👋 Hey there! I'm Mahatab Hossen Sudip, a 17-year-old front-end
+                web developer. Hailing from the charming town of Jamalpur in
+                Mymensingh, I'm passionate about crafting seamless user
+                interfaces.
+              </p>
+              <p>
+                My journey into the world of web development started with a love
+                for coding and design. Over the past months, I've delved into
+                HTML, CSS, and JavaScript, creating dynamic and visually
+                appealing websites. Transitioning from WordPress, I've dedicated
+                the last 6 months to front-end development, exploring frameworks
+                like React.js and Next.js.
+              </p>
+              <p>
+                When I'm not immersed in lines of code, you'll find me exploring
+                new technologies, learning, and pushing my creative boundaries.
+                Excited about the endless possibilities the web offers, I'm on a
+                mission to contribute innovative solutions to the digital
+                landscape.
+              </p>
+              <p>
+                Join me on this exciting journey of growth and creativity. Let's
+                connect, collaborate, and build something amazing together! 🚀✨
+              </p>
+            </div>
 
+            <figure class="" data-aos="fade-down">
+              <img
+                class="rounded-xl shadow-xl shadow-sky-900"
+                src="https://avatars.githubusercontent.com/u/82496064?v=4"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
 
+      <section class="bg-base-300 py-10 loading-section" data-aos="fade-up">
+        <div class="container px-5 py-10 mx-auto">
+          <div class="title">
+            <h2
+              class="text-2xl font-semibold text-center capitalize lg:text-3xl"
+            >
+              Latest <span class="text-blue-500">Article</span>
+            </h2>
 
+            <div
+              class="divider before:bg-black before:h-1 before:rounded-l after:rounded-r after:bg-black after:h-1 w-16 mx-auto mt-0"
+            ></div>
+          </div>
 
+          <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 xl:grid-cols-2">
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+              />
 
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-xl font-semibold hover:underline">
+                  How to use sticky note for problem solving
+                </a>
+                <p class="text-sm">
+                  Use sticky notes to visually organize and prioritize problems,
+                  facilitating a ........
+                </p>
 
-    
-  </main>
+                <span class="text-sm">On: 20 October 2019</span>
+              </div>
+            </article>
 
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+              />
 
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-md font-semibold hover:underline">
+                  How to use sticky note for problem solving
+                </a>
+                <p class="text-sm">
+                  Leverage sticky notes as a tactile tool for brainstorming,
+                  organizing ideas, and ....
+                </p>
+                <span class="text-sm">On: 20 October 2019</span>
+              </div>
+            </article>
 
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1544654803-b69140b285a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+              />
 
-  <!-- Bootstrap JS v5.1.3 CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-md font-semibold hover:underline">
+                  Morning routine to boost your mood
+                </a>
+                <p class="text-sm">
+                  Incorporate uplifting activities like gratitude journaling,
+                  exercise, and positive ....
+                </p>
+                <span class="text-sm">On: 25 November 2020</span>
+              </div>
+            </article>
+
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80"
+                alt=""
+              />
+
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-md font-semibold hover:underline">
+                  All the features you want to know
+                </a>
+
+                <p class="text-sm">
+                  Explore and discover all the features by navigating through
+                  the user interface or referring to the product .....
+                </p>
+
+                <span class="text-sm">On: 30 September 2020</span>
+              </div>
+            </article>
+
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80"
+                alt=""
+              />
+
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-md font-semibold hover:underline">
+                  Minimal workspace for your inspirations
+                </a>
+                <p class="text-sm">
+                  Create a minimal workspace with clutter-free surfaces and
+                  essential tools.....
+                </p>
+                <span class="text-sm">On: 13 October 2019</span>
+              </div>
+            </article>
+
+            <article
+              class="lg:flex bg-base-100 rounded-box shadow-md hover:shadow-xl"
+            >
+              <img
+                class="object-cover w-full h-56 rounded-lg lg:w-64"
+                src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+              />
+
+              <div class="flex flex-col justify-between p-5 lg:mx-6">
+                <a href="#" class="text-md font-semibold hover:underline">
+                  What do you want to know about Blockchane
+                </a>
+
+                <p class="text-sm">
+                  If you're looking for information on blockchain, I can provide
+                  details on its definition......
+                </p>
+
+                <span class="text-sm">On: 20 October 2019</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-us" class="py-16 loading-section" data-aos="fade-up">
+        <div class="container mx-auto px-5">
+          <div class="title">
+            <h2
+              class="text-2xl font-semibold text-center capitalize lg:text-3xl"
+            >
+              Get <span class="text-blue-500">In</span> Touch
+            </h2>
+
+            <div
+              class="divider before:bg-black before:h-1 before:rounded-l after:rounded-r after:bg-black after:h-1 w-16 mx-auto mt-0"
+            ></div>
+          </div>
+
+          <div class="my-8">
+            <iframe
+              class="rounded-xl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1707.5791295181316!2d89.85643317449231!3d25.21271136922211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fd660f2ee3bed1%3A0x3f0b28d1491ec289!2sBakshiganj!5e1!3m2!1sen!2sbd!4v1702236765214!5m2!1sen!2sbd"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              data-aos="fade-in"
+            ></iframe>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-center gap-5">
+            <figure data-aos="fade-right">
+              <img
+                class="w-auto h-80"
+                src="/assets/images/svg_icons/undraw_personal_email_re_4lx7.svg"
+                alt=""
+              />
+            </figure>
+
+            <form
+              class="space-y-3 md:w-2/5"
+              id="my-form"
+              action="https://formspree.io/f/mrgwnozz"
+              method="POST"
+              data-aos="fade-left"
+            >
+              <div>
+                <label for="username" class="block text-sm">Name</label>
+
+                <input
+                  name="name"
+                  id="username"
+                  type="text"
+                  placeholder="Example Smith"
+                  class="block mt-2 w-full rounded-lg border px-5 py-2.5 focus:border-blue-400 outline-none bg-transparent"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm">Email</label>
+
+                <input
+                  name="email"
+                  id="email"
+                  type="email"
+                  placeholder="smith@domain.com"
+                  class="block mt-2 w-full rounded-lg border px-5 py-2.5 focus:border-blue-400 outline-none bg-transparent"
+                />
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm">Message</label>
+
+                <textarea
+                  name="message"
+                  id="message"
+                  type="text"
+                  placeholder="Type your message"
+                  class="block mt-2 w-full rounded-lg border px-5 py-2.5 focus:border-blue-400 outline-none bg-transparent"
+                ></textarea>
+              </div>
+
+              <button id="my-form-button" class="btn btn-block btn-primary">
+                Send Message
+              </button>
+              <p id="my-form-status" class="text-center pb-4 pt-5"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-base-300 loading-section">
+      <div class="container px-5 py-12 mx-auto">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div>
+            <p class="font-semibold">Quick Link</p>
+
+            <div class="flex flex-col items-start mt-5 space-y-2">
+              <a
+                href="#banner"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Home</a
+              >
+              <a
+                href="#contact-us"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Contact Us</a
+              >
+              <a
+                href="#skills"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Skills</a
+              >
+            </div>
+          </div>
+
+          <!-- <div>
+                  <p class="font-semibold  ">Industries</p>
   
+                  <div class="flex flex-col items-start mt-5 space-y-2">
+                      <a href="#" class="transition-colors duration-300 hover:underline hover:text-blue-500">Retail & E-Commerce</a>
+                      <a href="#" class="transition-colors duration-300 hover:underline hover:text-blue-500">Information Technology</a>
+                      <a href="#" class="transition-colors duration-300 hover:underline hover:text-blue-500">Finance & Insurance</a>
+                  </div>
+              </div> -->
 
+          <div>
+            <p class="font-semibold">Services</p>
 
-</body>
+            <div class="flex flex-col items-start mt-5 space-y-2">
+              <a
+                href="#"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Translation</a
+              >
+              <a
+                href="#"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Proofreading & Editing</a
+              >
+              <a
+                href="#"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >Content Creation</a
+              >
+            </div>
+          </div>
 
+          <div>
+            <p class="font-semibold">Contact Us</p>
+
+            <div class="flex flex-col items-start mt-5 space-y-2">
+              <a
+                href="tel:+8801775025349"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >+880 17750 25349</a
+              >
+              <a
+                href="mailto:mahatab1014@gmail.com"
+                class="transition-colors duration-300 hover:underline hover:text-blue-500"
+                >mahatab1014@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-6 border-stone-400" />
+
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <a href="#" class="text-xl font-bold"> MahaTab </a>
+
+          <p>
+            Copyright © 2023 - All right reserved by
+            <a href="https://github.com/mahatab1014">MahaTab Hossen</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById("my-form");
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const status = document.getElementById("my-form-status");
+        const data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset();
+            } else {
+              response.json().then((data) => {
+                if (Object.hasOwn(data, "errors")) {
+                  status.innerHTML = data["errors"]
+                    .map((error) => error["message"])
+                    .join(", ");
+                } else {
+                  status.innerHTML =
+                    "Oops! There was a problem submitting your form";
+                }
+              });
+            }
+          })
+          .catch((error) => {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          });
+      }
+      form.addEventListener("submit", handleSubmit);
+    </script>
+
+    <script>
+      let myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 1000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        let sections = document.getElementsByClassName("loading-section");
+
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>
